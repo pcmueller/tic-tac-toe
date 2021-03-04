@@ -115,7 +115,6 @@
 - Clean/refactor HTML using Style Guide
 - Clean/refactor CSS using Style Guide
 - Clean/refactor JS using Style Guide
-- Submit/receive review from mentor, if permitted
 - Complete final code cleanup
 - **PROJECT DUE AT 9pm**
 
