@@ -49,7 +49,7 @@
 
 ### Project Structure & Schedule
 
-* Iterations:
+#### Iterations:
 
 ###### Iteration 1
 - x
@@ -76,8 +76,8 @@
 - x
 - x
 
-* Schedule:
-** mirrored in [Project Board](https://github.com/users/pcmueller/projects/1)**
+#### Schedule:
+**duplicated in [Project Board](https://github.com/users/pcmueller/projects/1)**
 
 ###### Day 1 - Thursday 3.4
 - Complete 
