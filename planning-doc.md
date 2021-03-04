@@ -1,12 +1,10 @@
-# TIC TAC TOE Project
-## Planning Doc
+## Planning Doc: *TIC TAC TOE Project*
 
 ### Functionality
 * [GAME DEMO](https://youtu.be/p8UYR0Ixb5A)
 * In this project, we will not be providing detailed iterations. We want you to exercise your skills in planning out work!
 
 ##### Notes:
-
 * A timeout is used after a completed game to reset the board.
 * YOU DO NOT NEED TO DISPLAY EACH INDIVIDUAL WIN BOARD. WE ONLY NEED TO SEE NUMBER OF WINS.
 * No need to match colors or icons, but the overall layout should be the same. You can get as creative as you would like with your Tic Tac Toe design!
