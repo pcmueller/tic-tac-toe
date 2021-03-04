@@ -49,29 +49,29 @@
 
 ### Project Structure & Schedule
 
-##### Iterations:
+#### Iterations:
 
-Iteration 1
-- x
-- x
-- x
-
-Iteration 2
+###### Iteration 1
 - x
 - x
 - x
 
-Iteration 3
+###### Iteration 2
 - x
 - x
 - x
 
-Iteration 4
+###### Iteration 3
 - x
 - x
 - x
 
-Review & Refactoring
+###### Iteration 4
+- x
+- x
+- x
+
+###### Review & Refactoring
 - x
 - x
 - x
