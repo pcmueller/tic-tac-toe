@@ -1,4 +1,5 @@
 # Planning Doc: TIC TAC TOE Project
+##### Project Specs: https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html
 
 ### Functionality
 * [GAME DEMO](https://youtu.be/p8UYR0Ixb5A)
