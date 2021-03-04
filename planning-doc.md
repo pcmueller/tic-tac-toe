@@ -108,10 +108,10 @@ see: [Project Board](https://github.com/users/pcmueller/projects/1)
 - Reach out for code reviews, if permitted
 
 ###### Day 6 - Tues 3.9
-**PROJECT DUE AT 9pm**
 - Clean/refactor HTML using Style Guide
 - Clean/refactor CSS using Style Guide
 - Clean/refactor JS using Style Guide
 - Submit/receive review from mentor, if permitted
 - Complete final code cleanup
-- SLEEEEEP
+- **PROJECT DUE AT 9pm**
+
