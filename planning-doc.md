@@ -49,7 +49,7 @@
 
 ### Project Structure & Schedule
 
-#### Iterations:
+* Iterations:
 
 ###### Iteration 1
 - x
@@ -75,3 +75,35 @@
 - x
 - x
 - x
+
+* Schedule:
+** mirrored in [Project Board](https://github.com/users/pcmueller/projects/1)**
+
+###### Day 1 - Thursday 3.4
+- Complete 
+
+
+###### Day 2 - Friday 3.5
+
+
+
+###### Day 3 - Saturday 3.6
+
+
+
+###### Day 4 - Sunday 3.7
+
+
+
+###### Day 5 - Monday 3.8
+
+
+
+###### Day 6 - Tues 3.9
+**PROJECT DUE AT 9pm**
+- Clean/refactor HTML using Style Guide
+- Clean/refactor CSS using Style Guide
+- Clean/refactor JS using Style Guide
+- Submit/receive review from mentor, if permitted
+- Complete final code cleanup
+- SLEEEEEP
