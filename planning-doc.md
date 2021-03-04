@@ -46,3 +46,32 @@
 7. Display the Player data in the sidebars
 8. Automatically reset the game board to allow for a new game to be played after the previous game is won
 9. Persist Player data using local storage (number of wins should persist across page refreshes)
+
+### Project Structure & Schedule
+
+##### Iterations:
+
+Iteration 1
+- x
+- x
+- x
+
+Iteration 2
+- x
+- x
+- x
+
+Iteration 3
+- x
+- x
+- x
+
+Iteration 4
+- x
+- x
+- x
+
+Review & Refactoring
+- x
+- x
+- x
