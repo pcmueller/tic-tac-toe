@@ -1,8 +1,7 @@
 ## TIC TAC TOE Project - Planning Doc
 
 ### Functionality
-* [game demo](https://youtu.be/p8UYR0Ixb5A)
-
+* [GAME DEMO](https://youtu.be/p8UYR0Ixb5A)
 * In this project, we will not be providing detailed iterations. We want you to exercise your skills in planning out work!
 
 #### Notes:
@@ -14,14 +13,14 @@
 ### Architecture
 * Your entire application will consist of one HTML page. You will have three JavaScript files:
 
-1. A player.js file that contains a Player class.
+1. *A player.js file that contains a Player class.*
   * Player methods must include, but are not limited to:
     * constructor - properties should include: id (ex: 'one'), token (ex: '⭐️'), wins (ex: [])
     * saveWinsToStorage
     * retrieveWinsFromStorage
 
 2. A game.js file that contains a Game class.
-  * A Game should include:
+  * *A Game should include:*
     * Two Player instances
       * A way to keep track of the data for the game board
       * A way to keep track of which player’s turn it currently is
@@ -30,4 +29,4 @@
       * A way to save a winning Game’s board data to the correct player’s wins array
       * A way to reset the Game’s board to begin a new game
 
-3. A main.js file that contains all DOM related JavaScript
+3. *A main.js file that contains all DOM related JavaScript*
