@@ -77,37 +77,41 @@
 - x
 
 #### Schedule:
-see: [Project Board](https://github.com/users/pcmueller/projects/1)
 
-###### Day 1 - Thursday 3.4
+###### Day 1 - Wednesday 3.3
+- Create GitHub Repo
+- Create GitHub [Project Board](https://github.com/users/pcmueller/projects/1)
+- Send Day 1 Deliverables to PM ([Heather](https://github.com/hfaerber))
+
+###### Day 2 - Thursday 3.4
 - Break down project into subtasks and assign to iterations
 - Schedule iterations/subtasks on GitHub Project Board
 - Meet with mentor to review functionality ideas and iteration schedule, broadly
 - Pseudocode Iterations 1-2
 - Begin Iteration 1
 
-###### Day 2 - Friday 3.5
+###### Day 3 - Friday 3.5
 - Complete Iteration 1 code
 - Begin Iteration 2
 - Pseudocode Iteration 3
 
-###### Day 3 - Saturday 3.6
+###### Day 4 - Saturday 3.6
 - Complete Iteration 2 code
 - Begin Iteration 3
 - Pseudocode Iteration 4
 
-###### Day 4 - Sunday 3.7
+###### Day 5 - Sunday 3.7
 - Complete Iteration 3 code
 - Begin Iteration 4
 - Plan refactoring
 
-###### Day 5 - Monday 3.8
+###### Day 6 - Monday 3.8
 - Complete Iteration 4 code
 - Begin and complete all re-styling
 - Begin refactoring
 - Reach out for code reviews, if permitted
 
-###### Day 6 - Tues 3.9
+###### Day 7 - Tues 3.9
 - Clean/refactor HTML using Style Guide
 - Clean/refactor CSS using Style Guide
 - Clean/refactor JS using Style Guide
