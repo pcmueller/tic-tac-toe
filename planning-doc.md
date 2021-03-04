@@ -1,4 +1,4 @@
-# Planning Doc: *TIC TAC TOE* Project
+# Planning Doc: ## *TIC TAC TOE* Project
 
 ### Functionality
 * [GAME DEMO](https://youtu.be/p8UYR0Ixb5A)
