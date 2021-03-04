@@ -1,7 +1,6 @@
 # Planning Doc: *TIC TAC TOE* Project
 
 ### Functionality
----
 * [GAME DEMO](https://youtu.be/p8UYR0Ixb5A)
 * In this project, we will not be providing detailed iterations. We want you to exercise your skills in planning out work!
 
@@ -11,7 +10,6 @@
 * No need to match colors or icons, but the overall layout should be the same. You can get as creative as you would like with your Tic Tac Toe design!
 
 ### Architecture
----
 *Your entire application will consist of one HTML page. You will have three JavaScript files:*
 
 1. **A player.js file that contains a Player class.**
@@ -33,7 +31,6 @@
 3. **A main.js file that contains all DOM related JavaScript**
 
 ### Data Model
----
 *In a game like Tic Tac Toe, it is tempting to manipulate the DOM first. Remember that the game logic exists exclusively in the data model. The DOM simply reflects/displays that data model.*
 
 #### Suggested Iterations
