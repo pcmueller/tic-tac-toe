@@ -67,7 +67,7 @@
   - checkForDraw(), to test if turnCounter variable has value of 9 AND isActive has value of true, if so display "draw" message, invoke clearBoard() function
   - clearBoard(), to reset turnCounter, currentPlayer, & gameBoard, and execute 'timeout' by invoking setTimeout() method (should message display happen here?) to clear/refresh center DOM when timer ends.
 
-Functionality Notes:
+*Future Functionality Notes:*
 - currentPlayer:
   - if --> (!turnCounter || !turnCounter % 2), currentPlayer = player1; else --> currentPlayer = player2
 
