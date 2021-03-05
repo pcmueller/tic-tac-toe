@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0;
+  height: 100%;
+  font-family: 'DotGothic16',sans-serif;
+  font-size: 1em;
+}
+
