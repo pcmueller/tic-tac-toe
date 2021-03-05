@@ -39,7 +39,11 @@ class Game {
 
   declareVictory() {
     this.isActive = false;
-    // ditch this method and execute function from main?
-    // could reassign gameName.isActive and run playerName.saveWinsToStorage() from there
+    // playerName.wins++;
+    // playerName.saveWinsToStorage()
+  }
+
+  clearBoard() {
+    // invoke setTimeout() method to run helper function to clear DOM / refresh page
   }
 }
