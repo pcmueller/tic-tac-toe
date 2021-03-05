@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player('one', ❤️);
-    this.player2 = new Player('two', ⭐️);
+    this.player1 = new Player('one', '❤️');
+    this.player2 = new Player('two', '⭐️');
     this.board = [];
     this.currentPlayer = 1;
     this.turnCounter = 0;
@@ -9,6 +9,7 @@ class Game {
   }
 
   checkForWinner() {
+    // probably can't run a triple conditional, but this is the logic:
     if (this.board[0] === this.board[1] === this.board[2]) {
       this.declareVictory();
     } else if (this.board[3] === this.board[4] === this.board[5]) {
