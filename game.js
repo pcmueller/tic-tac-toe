@@ -29,4 +29,11 @@ class Game {
       this.checkForDraw();
     }
   }
+
+  checkForDraw() {
+    if (this.turnCounter === 9 && this.isActive === true) {
+      // display "draw" message
+      this.clearBoard();
+    }
+  }
 }
