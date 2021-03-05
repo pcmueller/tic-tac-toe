@@ -52,25 +52,27 @@
 #### Iterations:
 
 ###### Iteration 1
-- Plan HTML layout
+1. Plan/build initial HTML layout
  - List elements, draw structure longhand, then transpose into pseudo doc.
-- Create player.js file w/ Player class constructor (incl. id, token, wins, and guesses properties, w/ default values), and empty saveWinsToStorage & retrieveWinsFromStorage methods.
-- Create game.js file w/ Game class constructor including the following properties:
-  - player1 and player 2, to receive individual Player class instantiations
-  - an empty gameBoard variable (to receive array of boxes 1-9, once assigned object values via succesful 'click' event)
-  - a currentPlayer variable (defaulted to 'p1' or player1?)
-  - a turnCounter variable (inst. at 0)
-  - a Boolean isActive variable (defaulted to true?)
-- ... and the following class methods:
-  - checkForWinner(), to access values of all 9 squares (as stored inside gameBoard.boxes) and test all 8 possible winning combinations (via conditionals), and if any is satisfied, invoke the declareVictory() method. Otherwise, run checkForDraw() method
-  - declareVictory() to reassign value of isActive (false), push gameBoard array (objects 0-8) into wins array, display "win" message, invoke clearBoard() function
-  - checkForDraw(), to test if turnCounter variable has value of 9 AND isActive has value of true, if so display "draw" message, invoke clearBoard() function
-  - clearBoard(), to reset turnCounter, currentPlayer, & gameBoard, and execute 'timeout' by invoking setTimeout() method (should message display happen here?) to clear/refresh center DOM when timer ends.
+2. Create player.js file w/ Player class constructor (incl. id, token, wins, and guesses properties, w/ default values), and empty saveWinsToStorage & retrieveWinsFromStorage methods.
+3. Create game.js file w/ Game class constructor 
+ - include the following properties:
+   - player1 and player 2, to receive individual Player class instantiations
+   - an empty gameBoard variable (to receive array of boxes 1-9, once assigned object values via succesful 'click' event)
+   - a currentPlayer variable (defaulted to 'p1' or player1?)
+   - a turnCounter variable (inst. at 0)
+   - a Boolean isActive variable (defaulted to true?)
+ - ... and the following class methods:
+   - checkForWinner(), to access values of all 9 squares (as stored inside gameBoard.boxes) and test all 8 possible winning combinations (via conditionals), and    if any is satisfied, invoke the declareVictory() method. Otherwise, run checkForDraw() method
+   - declareVictory() to reassign value of isActive (false), push gameBoard array (objects 0-8) into wins array, display "win" message, invoke clearBoard() function
+   - checkForDraw(), to test if turnCounter variable has value of 9 AND isActive has value of true, if so display "draw" message, invoke clearBoard() function
+   - clearBoard(), to reset turnCounter, currentPlayer, & gameBoard, and execute 'timeout' by invoking setTimeout() method (should message display happen here?) to clear/refresh center DOM when timer ends.
+4. Create styles.css file
+ - build out classes for all HTML elements
+ - format all elements to match basic layout
+ - add minimal styling to make HTML more readable
 
-*Future Functionality Notes:*
-- currentPlayer:
-  - if --> (!turnCounter || !turnCounter % 2), currentPlayer = player1; else --> currentPlayer = player2
-
+*future functionality ideas:*
 - gameGrid.addEventListener('click', takeTurn);
 - takeTurn()
   - identify event target's parent (which square), then check if it currently has a value.
