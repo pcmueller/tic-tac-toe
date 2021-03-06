@@ -1,19 +1,25 @@
 class Game {
   constructor() {
-    this.board = [];
-    this.players = [];
+    this.board = ["", "", "", "", "", "", "", "", ""];
+    this.player1;
+    this.player2;
     this.currentPlayer;
     this.turnCounter = 0;
     this.isActive = true;
   }
 
-  initiateNewGame() {
-    this.players.push(new Player('one', '🤖'));
-    this.players.push(new Player('two', '👾'));
+  updateCurrentPlayer() {
+    this.turnCounter++;
+    if (this.turnCounter % 2 === 0) {
+      this.currentPlayer = this.player1;
+    } else {
+      this.currentPlayer = this.player2;
+    }
   }
 
   checkForWinner() {
-    // is this syntax correct, or do we need to use this.board[n].value?
+    
+    
     if (this.board[0] === this.board[1] && this.board[1] === this.board[2]) {
       this.declareVictory();
     } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5]) {
@@ -34,30 +40,26 @@ class Game {
       this.checkForDraw();
     }
   }
+  
+  declareVictory() {
+    this.currentPlayer.wins++;
+    this.currentPlayer.saveWinsToStorage();
+    this.isActive = false;
+  }
 
   checkForDraw() {
     if (this.turnCounter === 9 && this.isActive === true) {
-      // display "draw" message
+      this.isActive === undefined;
       this.clearBoard();
+    } else {
+      return;
     }
-    return;
   }
 
-  declareVictory() {
-    this.isActive = false;
-    // playerName.wins++;
-    // playerName.saveWinsToStorage()
-  }
 
   clearBoard() {
-    // invoke setTimeout() method to run helper function to clear DOM / refresh page
-  }
-
-  checkPlayerTurn() {
-    if (this.turnCounter === 0 || this.turnCounter % 2 === 0) {
-      this.currentPlayer = 'p1';
-    } else {
-      this.currentPlayer = 'p2';
-    }
+    setTimeout(function() {
+      startNewGame(); }, 1000);
+      // clear/refresh DOM (need HTML function)
   }
 }
