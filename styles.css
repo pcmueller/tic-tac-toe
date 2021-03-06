@@ -97,3 +97,27 @@ body {
 .box:nth-child(3n+1) {
   border-left: 0;
 }
+
+/** aside columns **/
+
+.win-box {
+  margin-top: 7%;
+}
+
+.token {
+  font-size: 5em;
+}
+
+.win-counter {
+  font-size: 3em;
+}
+
+
+/** colors **/
+
+/*
+lime: #00FF00
+cyan: #00FFFF
+bright pink: #FF1493;
+khaki: #F0E68C;
+*/
