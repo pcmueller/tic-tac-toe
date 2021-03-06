@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="columns">
+        <main class="center">
+          <header class="game-text" id="gameText">it's 🤖's turn</header>
+          <section class="game-grid">
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <div class="box" id="box6"></div>
+            <div class="box" id="box7"></div>
+            <div class="box" id="box8"></div>
+            <div class="box" id="box9"></div>
+          </section>
+        </main>
+        <aside class="left-side">
+          <section class="win-box">
+            <header class="token">🤖</header>
+            <div class="win-counter">player 1 wins</div>
+          </section>
+        </aside>
+        <aside class="right-side">
+          <section class="win-box">
+            <header class="token">👾</header>
+            <div class="win-counter">player 2 loses</div>
+          </section>
+        </aside>
+      </section>
+    </div>
+    <script src="./src/game.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
