@@ -73,6 +73,10 @@ body {
 /** game boxes **/
 
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
   height: 32%;
   width: 32%;
   margin: 2px;
