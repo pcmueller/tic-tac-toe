@@ -1,14 +1,12 @@
-// selector variables
+// global & selector variables
+
+var game;
 
 var center = document.getElementById("center");
 var gameDisplay = document.getElementById("gameText");
 var gameGrid = document.getElementById("gameGrid");
 var p1WinsDisplay = document.getElementById("winCounter1");
 var p2WinsDisplay = document.getElementById("winCounter2");
-
-// global variables
-
-var game;
 
 // event listeners
 
@@ -27,26 +25,26 @@ function startNewGame() {
   game.player1 = p1;
   game.player2 = p2;
   game.currentPlayer = game.player1;
-  updatePlayerWins();
+  updateWinDisplay();
 }
 
 function takeTurn(e) {
   var clickedBox = e.target;
   if (clickedBox.innerText === "" && game.isActive) {
     addPlayerToken(clickedBox);
-    updateBoxData(clickedBox);
+    updateBoardData(clickedBox);
     evaluateGrid();
   }
 }
 
-// helper functions
+// update date model & DOM
 
 function addPlayerToken(box) {
   box.innerText = game.currentPlayer.token;
   game.currentPlayer.guesses++;
 }
 
-function updateBoxData(box) {
+function updateBoardData(box) {
   var id = parseInt(box.id);
   for (var i = 0; i < game.board.length; i++) {
     if (i === id) {
@@ -54,6 +52,8 @@ function updateBoxData(box) {
     }
   }
 }
+
+// test win/draw scenarios
 
 function evaluateGrid() {
   game.checkForWinner();
@@ -67,25 +67,34 @@ function updateTextDisplay() {
     gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
   } else if (!game.isActive && !game.isDraw) {
     gameDisplay.innerText = `${game.currentPlayer.id} wins!`;
-    game.player1.saveWinsToStorage();
-    game.player2.saveWinsToStorage();
+    saveWins();
     clearBoard();
   } else {
-    game.player1.saveWinsToStorage();
-    game.player2.saveWinsToStorage();
     gameDisplay.innerText = "it's a draw 💀";
+    saveWins();
     clearBoard();
   }
 }
 
-function updatePlayerWins() {
-  game.player1.retrieveWinsFromStorage();
-  game.player2.retrieveWinsFromStorage();
+// update localStorage and display
+
+function updateWinDisplay() {
+  retrieveWins();
   p1WinsDisplay.innerText = `${game.player1.wins} wins`;
   p2WinsDisplay.innerText = `${game.player2.wins} wins`;
 }
 
+function saveWins() {
+  game.player1.saveWinsToStorage();
+  game.player2.saveWinsToStorage();
+}
+
+function retrieveWins() {
+  game.player1.retrieveWinsFromStorage();
+  game.player2.retrieveWinsFromStorage();
+}
+
 function clearBoard() {
     setTimeout(function() {
-      location.reload(); }, 1500);
+      location.reload(); }, 1000);
   }
