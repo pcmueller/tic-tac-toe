@@ -41,7 +41,6 @@ function takeTurn(e) {
 
 function addPlayerToken(box) {
   box.innerText = game.currentPlayer.token;
-  game.currentPlayer.guesses++;
 }
 
 function updateBoardData(box) {
