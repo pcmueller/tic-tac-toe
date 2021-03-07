@@ -6,10 +6,11 @@ class Game {
     this.currentPlayer;
     this.turnCounter = 0;
     this.isActive = true;
+    this.isDraw = false;
   }
 
   updateCurrentPlayer() {
-    this.turnCounter++;
+    game.turnCounter++;
     if (this.turnCounter % 2 === 0) {
       this.currentPlayer = this.player1;
     } else {
@@ -19,29 +20,29 @@ class Game {
 
   checkForWinner() {
     console.log(this.board);
-    if (this.board[0] === this.board[1] && this.board[1] === this.board[2]) {
+    if (this.board[0] !== "" && this.board[0] === this.board[1] && this.board[1] === this.board[2]) {
       this.declareVictory();
-    } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5]) {
+    } else if (this.board[3] !== "" && this.board[3] === this.board[4] && this.board[4] === this.board[5]) {
       this.declareVictory();
-    } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8]) {
+    } else if (this.board[6] !== "" && this.board[6] === this.board[7] && this.board[7] === this.board[8]) {
       this.declareVictory();
-    } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6]) {
+    } else if (this.board[0] !== "" && this.board[0] === this.board[3] && this.board[3] === this.board[6]) {
       this.declareVictory();
-    } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7]) {
+    } else if (this.board[1] !== "" && this.board[1] === this.board[4] && this.board[4] === this.board[7]) {
       this.declareVictory();
-    } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8]) {
+    } else if (this.board[2] !== "" && this.board[2] === this.board[5] && this.board[5] === this.board[8]) {
       this.declareVictory();
-    } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8]) {
+    } else if (this.board[0] !== "" && this.board[0] === this.board[4] && this.board[4] === this.board[8]) {
       this.declareVictory();
-    } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6]) {
+    } else if (this.board[2] !== "" && this.board[2] === this.board[4] && this.board[4] === this.board[6]) {
       this.declareVictory();
     } else {
-      this.checkForDraw();
+      return;
     }
   }
   
   declareVictory() {
-    // console.log(this.board);
+    this.turnCounter--;
     this.currentPlayer.wins++;
     this.currentPlayer.saveWinsToStorage();
     this.isActive = false;
@@ -49,17 +50,10 @@ class Game {
 
   checkForDraw() {
     if (this.turnCounter === 9 && this.isActive === true) {
-      this.isActive === undefined;
-      this.clearBoard();
+      this.isActive = false;
+      this.isDraw = true;
     } else {
       return;
     }
-  }
-
-
-  clearBoard() {
-    setTimeout(function() {
-      startNewGame(); }, 1000);
-      // clear/refresh DOM (need HTML function)
   }
 }

@@ -3,19 +3,8 @@
 var center = document.getElementById("center");
 var gameDisplay = document.getElementById("gameText");
 var gameGrid = document.getElementById("gameGrid");
-// var box = document.querySelectorAll("#box");
 var p1WinsDisplay = document.getElementById("winCounter1");
 var p2WinsDisplay = document.getElementById("winCounter2");
-
-var box1 = document.getElementById("box1");
-var box2 = document.getElementById("box2");
-var box3 = document.getElementById("box3");
-var box4 = document.getElementById("box4");
-var box5 = document.getElementById("box5");
-var box6 = document.getElementById("box6");
-var box7 = document.getElementById("box7");
-var box8 = document.getElementById("box8");
-var box9 = document.getElementById("box9");
 
 // global variables
 
@@ -43,7 +32,7 @@ function startNewGame() {
 
 function takeTurn(e) {
   var clickedBox = e.target;
-  if (clickedBox.innerText === "") {
+  if (clickedBox.innerText === "" && game.isActive) {
     addPlayerToken(clickedBox);
     updateBoxData(clickedBox);
     evaluateGrid();
@@ -69,22 +58,35 @@ function updateBoxData(box) {
 function evaluateGrid() {
   game.checkForWinner();
   game.updateCurrentPlayer();
+  game.checkForDraw();
   updateTextDisplay();
 }
 
 function updateTextDisplay() {
-  if (game.isActive === true) {
+  if (game.isActive) {
     gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
-  } else if (game.isActive === false) {
+  } else if (!game.isActive && !game.isDraw) {
     gameDisplay.innerText = `${game.currentPlayer.id} wins!`;
+    game.player1.saveWinsToStorage();
+    game.player2.saveWinsToStorage();
+    clearBoard();
   } else {
-    gameDisplay.innerText = `$it's a draw :/`;
+    game.player1.saveWinsToStorage();
+    game.player2.saveWinsToStorage();
+    gameDisplay.innerText = "it's a draw 💀";
+    clearBoard();
   }
 }
 
 function updatePlayerWins() {
   game.player1.retrieveWinsFromStorage();
   game.player2.retrieveWinsFromStorage();
-  p1WinsDisplay = `${game.player1.wins} wins`;
-  p2WinsDisplay = `${game.player2.wins} wins`;
+  p1WinsDisplay.innerText = `${game.player1.wins} wins`;
+  p2WinsDisplay.innerText = `${game.player2.wins} wins`;
 }
+
+function clearBoard() {
+    setTimeout(function() {
+      console.log("CLEAR BOARD"); }, 1500);
+      // clear/refresh DOM (need HTML function)
+  }
