@@ -39,7 +39,6 @@ function startNewGame() {
   game.player2 = p2;
   game.currentPlayer = game.player1;
   updatePlayerWins();
-  // console.log(game);
 }
 
 function takeTurn(e) {
@@ -55,13 +54,14 @@ function takeTurn(e) {
 
 function addPlayerToken(box) {
   box.innerText = game.currentPlayer.token;
+  game.currentPlayer.guesses++;
 }
 
 function updateBoxData(box) {
   var id = parseInt(box.id);
   for (var i = 0; i < game.board.length; i++) {
     if (i === id) {
-      game.board[i] === game.currentPlayer.id;
+      game.board[i] = game.currentPlayer.id;
     }
   }
 }
@@ -76,7 +76,7 @@ function updateTextDisplay() {
   if (game.isActive === true) {
     gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
   } else if (game.isActive === false) {
-    gameDisplay.innerText = `${game.currentPlayer} wins!`;
+    gameDisplay.innerText = `${game.currentPlayer.id} wins!`;
   } else {
     gameDisplay.innerText = `$it's a draw :/`;
   }
