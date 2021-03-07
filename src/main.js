@@ -87,6 +87,5 @@ function updatePlayerWins() {
 
 function clearBoard() {
     setTimeout(function() {
-      console.log("CLEAR BOARD"); }, 1500);
-      // clear/refresh DOM (need HTML function)
+      location.reload(); }, 1500);
   }
