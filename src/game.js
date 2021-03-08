@@ -10,7 +10,9 @@ class Game {
   }
 
   updateCurrentPlayer() {
+    if (game.isActive) {
     game.turnCounter++;
+    }
     if (this.turnCounter % 2 === 0) {
       this.currentPlayer = this.player1;
     } else {
@@ -41,7 +43,6 @@ class Game {
   }
   
   declareWinner() {
-    this.turnCounter--;
     this.currentPlayer.wins++;
     this.currentPlayer.saveWinsToStorage();
     this.isActive = false;
