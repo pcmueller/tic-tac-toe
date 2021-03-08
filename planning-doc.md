@@ -149,6 +149,7 @@ JS:
 - Refactor evaluateGrid's helper functions so that turnCounter decrement in declareWinner is no longer necessary
 - Use SRP to compartmentalize updateCurrentPlayer functionality (add helper function to increment turnCounter)
 - Simplify checkForWinner - DRY out conditionals using second array or function
+- Fix border clicking issue - only execute function if classList includes "box"
 
 CSS:
 - Fix grid scaling issue
