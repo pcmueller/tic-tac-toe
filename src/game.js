@@ -9,17 +9,6 @@ class Game {
     this.isDraw = false;
   }
 
-  updateCurrentPlayer() {
-    if (game.isActive) {
-    game.turnCounter++;
-    }
-    if (this.turnCounter % 2 === 0) {
-      this.currentPlayer = this.player1;
-    } else {
-      this.currentPlayer = this.player2;
-    }
-  }
-
   checkForWinner() {
     if (this.board[0] !== "" && this.board[0] === this.board[1] && this.board[1] === this.board[2]) {
     this.declareWinner();
@@ -49,11 +38,26 @@ class Game {
   }
 
   checkForDraw() {
-    if (this.turnCounter === 9 && this.isActive === true) {
+    if (this.turnCounter === 8 && this.isActive === true) {
       this.isActive = false;
       this.isDraw = true;
     } else {
       return;
+    }
+  }
+
+    updateCurrentPlayer() {
+    this.updateCounter();
+    if (this.turnCounter % 2 === 0) {
+      this.currentPlayer = this.player1;
+    } else {
+      this.currentPlayer = this.player2;
+    }
+  }
+
+  updateCounter() {
+    if (this.isActive) {
+    this.turnCounter++;
     }
   }
 }
