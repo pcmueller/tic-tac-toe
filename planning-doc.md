@@ -80,20 +80,71 @@
   - addition of value to square should then triggger DOM refresh (invoke helper function to replace HTML block with interpolated emoji and value
 
 ###### Iteration 2
-- x
-- x
+- Declare global 'game' variable with no value assigned
+- Use query selectors to target elements by id and assign to new global variables
+  - var center (center column container)
+  - var gameDisplay (text display of game data - player's turn, win, draw, etc)
+  - var gameGrid (3x3 grid container)
+  - var p1WinsDisplay (player wins display in left column)
+  - var p2WinsDisplay (player wins display in right column)
+- Add 2 event listeners: 1 for page load (to invoke function to start new game), 1 for 'click' event (to invoke function to take turn)
+- Create startNewGame() function to instantiate new Game class instance and assign 2 new Player class instances as 'game' properties.
+- Create takeTurn() function
+  - Target the specific 'clicked' element, and write conditional to check if this element has value of empty string
+  - If contitional returns truthy value, invoke new functions to: 
+    - Add currentPlayer's token to inner text of element (update DOM)
+    - Add currentPlayer's id to game.board array at that index (update Data Model)
+    - Evaluate whether win conditional is met (test all 8 winning combinations), else test for draw scenario, then update currentPlayer/display
 
 ###### Iteration 3
-- x
-- x
+- Build functions invoked by takeTurn()
+  - addPlayerToken() 
+    - Access event.target via 'clickedBox' variable
+    - Assign currentPlayer.token as value of clickedBox.innerText to display token in that particular box
+  - updateBoardData()
+    - Parse id of clickedBox (it was stored in HTML, so needs to be converted from string to number)
+    - Iterate through board array (init. w/ 9 empty string values) and check if array index strictly equals parsed id of clickedBox
+    - If truthy, assign value of current player's id (either string "p1" or "p2") as to that array index
+  - evaluateGrid()
+    - Add functionality to test for win/draw and to update display in Iteration 4
 
 ###### Iteration 4
-- x
-- x
+- Build functions invoked by evaluateGrid():
+  - checkForWinner()
+    - Add if statements for all 8 win scenarios that invoke declareWinner() function ---> finish this function before turn/text display stuff
+    - Add else statement w/ just a return line
+  - checkForDraw()
+    - Add conditionmal to test whether turnCounter is strictly equal to 9, AND if game.isActive is true (winner function will reassign to false)
+    - If truthy, reassign isActive to false and isDraw property to true (need to add this property to game constructor, defaulted to false)
+  - updateCurrentPlayer()
+    - Increment turn counter by one - now that turn is "over", need to reassign value of currentPlayer
+    - Add conditional to test if value of turnCounter is evenly divisible by 2; if truthy, currentPlayer is p1, else, p2 (p1 plays on 0 and evens)
+  - updateTextDisplay()
+    - All DOM functionality (center column text display), so declare in main.js
+    - Need to test/execute 3 conditions:
+      - If game.isActive, update player turn with interpolated currentPlayer ("It's ${token}'s turn")
+      - If isActive AND isDraw are falsy, we've executed declareWinner function, so display winner ("${id} wins!)
+      - Else, it has to be a draw scenario (display "it's a draw.")
+      - In both game-ending conditions (win/draw), invoke a new function w/ a timeout to clear DOM & Data Model
+- Build declareWinner() function
+  - Increment currentPlayer's wins
+  - Invoke saveWinsToStorage() method (on currentPlayer's instance) to add win to localStorage
+  - Reassign isActive value to false (so that updateTextDisplay() knows which message to display)
+
+###### Iteration 5
+- Build saveWinsToStorage() Player class method
+  - Stringify player instance's wins and 'set' in localStorage, using that player's id as key and wins # as value
+- Build retrieveWinsFromStorage() Player class method
+  - Parse player instance's wins using 'get' from localStorage (using that player's id string), then add to value of that player's win property
+- Build clearBoard() function
+  - Use setTimeout() method to reload entire page after X seconds
+- Build updateWinDisplay() function 
+  - First, invoke retrieveWinsFromStorage() on both Player instances,
+  - Then replace innerText of wins display, using interpolation ('${game.playerX.wins} wins')
+- Invoke updateWinDisplay() anytime new game is created (somewhere in startNewGame() function)
 
 ###### Review & Refactoring
-- x
-- x
+- 
 
 #### Schedule:
 
@@ -107,33 +158,34 @@
 - Schedule iterations/subtasks on GitHub Project Board
 - Meet with mentor to review functionality ideas and iteration schedule, broadly
 - Pseudocode Iterations 1-2
-- Begin Iteration 1
+- Begin Iterations 1 & 2
 
 ###### Day 3 - Friday 3.5
-- Complete Iteration 1 code
+- Complete Iterations 1 & 2
 - Begin Iteration 2
-- Pseudocode Iteration 3
+- Pseudocode Iterations 3-4
 
 ###### Day 4 - Saturday 3.6
 - Complete Iteration 2 code
-- Begin Iteration 3
-- Pseudocode Iteration 4
+- Begin Iterations 3 & 4
+- Pseudocode Iteration 5
 
 ###### Day 5 - Sunday 3.7
-- Complete Iteration 3 code
-- Begin Iteration 4
+- Complete Iterations 3 & 4
+- Begin Iteration 5
 - Plan refactoring
 
 ###### Day 6 - Monday 3.8
-- Complete Iteration 4 code
-- Begin and complete all re-styling
-- Begin refactoring
-- Reach out for code reviews, if permitted
-
-###### Day 7 - Tues 3.9
+- Complete Iteration 5
+- Complete CSS styling
 - Clean/refactor HTML using Style Guide
 - Clean/refactor CSS using Style Guide
 - Clean/refactor JS using Style Guide
+- Reach out for code reviews, if permitted
+
+###### Day 7 - Tues 3.9
+- Run accessibility tests
+- Finish README.md
 - Complete final code cleanup
 - **PROJECT DUE AT 9pm**
 
