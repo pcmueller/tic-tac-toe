@@ -32,9 +32,9 @@ class Game {
   }
   
   declareWinner() {
+    this.isActive = false;
     this.currentPlayer.wins++;
     this.currentPlayer.saveWinsToStorage();
-    this.isActive = false;
   }
 
   checkForDraw() {

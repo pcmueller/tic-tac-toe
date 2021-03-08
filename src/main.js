@@ -56,8 +56,8 @@ function updateBoardData(box) {
 
 function evaluateGrid() {
   game.checkForWinner();
-  game.updateCurrentPlayer();
   game.checkForDraw();
+  game.updateCurrentPlayer();
   updateTextDisplay();
 }
 

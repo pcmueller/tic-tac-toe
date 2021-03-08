@@ -144,7 +144,24 @@
 - Invoke updateWinDisplay() anytime new game is created (somewhere in startNewGame() function)
 
 ###### Review & Refactoring
-- 
+
+JS:
+- Refactor evaluateGrid's helper functions so that turnCounter decrement in declareWinner is no longer necessary
+- Use SRP to compartmentalize updateCurrentPlayer functionality (add helper function to increment turnCounter)
+- Simplify checkForWinner - DRY out conditionals using second array or function
+
+CSS:
+- Fix grid scaling issue
+
+Style & Accessibility:
+- Run SMACCS test and add necessary HTML tags
+- Work through HTML Style Guide
+- Work through CSS Style Guide
+- Work through JS style Guide
+
+###### Additional Docs
+- Write out README.md text
+- Add functionality demo gif
 
 #### Schedule:
 
