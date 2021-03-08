@@ -66,9 +66,9 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  margin: 4em 2em 2em 2em;
+  margin: 5em 2em 2em 2em;
   width: 40vw;
-  height: 30em;
+  height: 60vh;
   padding: 0;
 }
 
