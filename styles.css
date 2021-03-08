@@ -68,8 +68,8 @@ body {
   justify-content: space-around;
   margin: 5em 2em 2em 2em;
   width: 40vw;
-  height: 60vh;
-  padding: 0;
+  height: 50vh;
+  /* padding: 0; */
 }
 
 /** game boxes **/
@@ -79,12 +79,11 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 5em;
-  height: 32%;
+  height: 40%;
   width: 32%;
-  margin: 2px;
+  margin: 3px;
   color: #1F1F3D;
   border: 2px rgba(0, 255, 255, 0.9) solid;
-  /* box-shadow: 4px 4px 4px 4px rgba(0, 150, 200, 0.2); */
 }
 
 .box:nth-child(-n+3) {

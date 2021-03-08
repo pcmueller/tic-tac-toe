@@ -3,7 +3,6 @@ class Player {
     this.id = player;
     this.token = token;
     this.wins = 0;
-    this.guesses = 0;
   }
 
   saveWinsToStorage() {
