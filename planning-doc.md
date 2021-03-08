@@ -155,7 +155,7 @@ CSS:
 - Fix grid scaling issue
 
 Style & Accessibility:
-- Run SMACCS test and add necessary HTML tags
+- Run WAVE evaluation tool and add modify HTML until all tests pass
 - Work through HTML Style Guide
 - Work through CSS Style Guide
 - Work through JS style Guide
