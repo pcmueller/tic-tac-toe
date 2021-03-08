@@ -65,7 +65,7 @@ function updateTextDisplay() {
   if (game.isActive) {
     gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
   } else if (!game.isActive && !game.isDraw) {
-    gameDisplay.innerText = `${game.currentPlayer.id} wins!`;
+    gameDisplay.innerText = `${game.currentPlayer.token} wins!`;
     clearBoard();
   } else {
     gameDisplay.innerText = "it's a draw 💀";

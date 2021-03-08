@@ -159,6 +159,9 @@ Style & Accessibility:
 - Work through CSS Style Guide
 - Work through JS style Guide
 
+Final Review:
+- Walk through rubric and look for any oversights in review
+
 ###### Additional Docs
 - Write out README.md text
 - Add functionality demo gif
