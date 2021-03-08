@@ -5,8 +5,8 @@ var game;
 var center = document.getElementById("center");
 var gameDisplay = document.getElementById("gameText");
 var gameGrid = document.getElementById("gameGrid");
-var p1WinsDisplay = document.getElementById("winCounter1");
-var p2WinsDisplay = document.getElementById("winCounter2");
+var p1WinsDisplay = document.getElementById("p1WinsDisplay");
+var p2WinsDisplay = document.getElementById("p2WinsDisplay");
 
 // event listeners
 
@@ -44,9 +44,9 @@ function addPlayerToken(box) {
 }
 
 function updateBoardData(box) {
-  var id = parseInt(box.id);
+  var parsedId = parseInt(box.id);
   for (var i = 0; i < game.board.length; i++) {
-    if (i === id) {
+    if (i === parsedId) {
       game.board[i] = game.currentPlayer.id;
     }
   }
@@ -56,8 +56,8 @@ function updateBoardData(box) {
 
 function evaluateGrid() {
   game.checkForWinner();
-  game.updateCurrentPlayer();
   game.checkForDraw();
+  game.updateCurrentPlayer();
   updateTextDisplay();
 }
 
@@ -65,27 +65,20 @@ function updateTextDisplay() {
   if (game.isActive) {
     gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
   } else if (!game.isActive && !game.isDraw) {
-    gameDisplay.innerText = `${game.currentPlayer.id} wins!`;
-    saveWins();
+    gameDisplay.innerText = `${game.currentPlayer.token} wins!`;
     clearBoard();
   } else {
     gameDisplay.innerText = "it's a draw 💀";
-    saveWins();
     clearBoard();
   }
 }
 
-// update localStorage and display
+// update localStorage and DOM display
 
 function updateWinDisplay() {
   retrieveWins();
   p1WinsDisplay.innerText = `${game.player1.wins} wins`;
   p2WinsDisplay.innerText = `${game.player2.wins} wins`;
-}
-
-function saveWins() {
-  game.player1.saveWinsToStorage();
-  game.player2.saveWinsToStorage();
 }
 
 function retrieveWins() {

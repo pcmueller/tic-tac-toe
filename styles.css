@@ -3,10 +3,11 @@
 body {
   margin: 0;
   font-family: 'DotGothic16', sans-serif;
+  background-color: rgb(20, 27, 67);
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: 100%;
   background: #ccc;
   display: flex;
   flex-direction: column;
@@ -14,8 +15,8 @@ body {
 
 .columns {
   display: flex;
+  height: 100%;
   flex: 1;
-  background: #999;
   color: #000;
 }
 
@@ -24,16 +25,16 @@ body {
 .center {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   width: 54%;
+  font-size: 1em;
+  height: 100vh;
   order: 2;
   color: #00ff00;
-  border-left: 5px solid rgba(0, 255, 0, 0.9);;
-  border-right: 5px solid rgba(0, 255, 0, 0.9);;
+  border-left: 5px solid rgba(0, 255, 0, 0.9);
+  border-right: 5px solid rgba(0, 255, 0, 0.9);
   background-image: linear-gradient(#242c44, #745399, #008B8B);
   box-shadow: 0 2px 0 2px rgba(0, 150, 0, 0.2);
-  /* flex: 1; */
 }
 
 .left-side {
@@ -56,18 +57,19 @@ body {
 /*** game board ***/
 
 .game-text {
-  margin-top: 7%;
-  font-size: 4em;
+  margin-top: 5%;
+  font-size: 4vw;
 }
 
 .game-grid {
-  display: flex;
-  flex-flow: row wrap;
-  /* justify-content: space-around; */
-  margin-top: 5em;
-  width: 40em;
-  height: 40em;
+  margin: 11% auto 1% auto;
   padding: 0;
+  height: 60%;
+  width: 60%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  place-self: center;
+  /* gap: 0; */
 }
 
 /** game boxes **/
@@ -76,13 +78,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5em;
-  height: 32%;
-  width: 32%;
-  margin: 2px;
+  font-size: 5vw;
+  margin: 3px;
   color: #1F1F3D;
   border: 2px rgba(0, 255, 255, 0.9) solid;
-  /* box-shadow: 4px 4px 4px 4px rgba(0, 150, 200, 0.2); */
 }
 
 .box:nth-child(-n+3) {
@@ -108,11 +107,11 @@ body {
 }
 
 .token {
-  font-size: 5em;
+  font-size: 5vw;
 }
 
 .win-counter {
-  font-size: 3em;
+  font-size: 3vw;
 }
 
 
