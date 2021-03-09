@@ -1,9 +1,9 @@
 class Game {
   constructor() {
+    this.player1 = new Player("p1", "👾");
+    this.player2 = new Player("p2", "🤖");
+    this.currentPlayer = this.player1;
     this.board = ["", "", "", "", "", "", "", "", ""];
-    this.player1;
-    this.player2;
-    this.currentPlayer;
     this.turnCounter = 0;
     this.isActive = true;
     this.isDraw = false;
@@ -11,14 +11,14 @@ class Game {
 
   checkForWinner() {
     if (this.board[0] !== "" && this.board[0] === this.board[1] && this.board[1] === this.board[2] || 
-    this.board[3] !== "" && this.board[3] === this.board[4] && this.board[4] === this.board[5] || 
-    this.board[6] !== "" && this.board[6] === this.board[7] && this.board[7] === this.board[8] || 
-    this.board[0] !== "" && this.board[0] === this.board[3] && this.board[3] === this.board[6] || 
-    this.board[1] !== "" && this.board[1] === this.board[4] && this.board[4] === this.board[7] || 
-    this.board[2] !== "" && this.board[2] === this.board[5] && this.board[5] === this.board[8] || 
-    this.board[0] !== "" && this.board[0] === this.board[4] && this.board[4] === this.board[8] || 
-    this.board[2] !== "" && this.board[2] === this.board[4] && this.board[4] === this.board[6]) {
-      this.declareWinner();
+      this.board[3] && this.board[3] === this.board[4] && this.board[4] === this.board[5] || 
+      this.board[6] && this.board[6] === this.board[7] && this.board[7] === this.board[8] || 
+      this.board[0] && this.board[0] === this.board[3] && this.board[3] === this.board[6] || 
+      this.board[1] && this.board[1] === this.board[4] && this.board[4] === this.board[7] || 
+      this.board[2] && this.board[2] === this.board[5] && this.board[5] === this.board[8] || 
+      this.board[0] && this.board[0] === this.board[4] && this.board[4] === this.board[8] || 
+      this.board[2] && this.board[2] === this.board[4] && this.board[4] === this.board[6]) {
+        this.declareWinner();
     } else {
       return;
     }
@@ -31,7 +31,7 @@ class Game {
   }
 
   checkForDraw() {
-    if (this.turnCounter === 8 && this.isActive === true) {
+    if (this.turnCounter === 8 && this.isActive) {
       this.isActive = false;
       this.isDraw = true;
     } else {
@@ -39,7 +39,7 @@ class Game {
     }
   }
 
-    updateCurrentPlayer() {
+  updateCurrentPlayer() {
     this.updateCounter();
     if (this.turnCounter % 2 === 0) {
       this.currentPlayer = this.player1;
@@ -50,7 +50,12 @@ class Game {
 
   updateCounter() {
     if (this.isActive) {
-    this.turnCounter++;
+      this.turnCounter++;
     }
+  }
+
+  clearBoard() {
+    setTimeout(function() {
+      location.reload(); }, 1000);
   }
 }

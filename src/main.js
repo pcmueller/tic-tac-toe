@@ -1,14 +1,13 @@
-// global & selector variables
+// GLOBAL & SELECTOR VARIABLES
+
+var gameGrid = document.getElementById("gameGrid");
+var gameDisplay = document.getElementById("gameText");
+var p1WinsDisplay = document.getElementById("p1Wins");
+var p2WinsDisplay = document.getElementById("p2Wins");
 
 var game;
 
-var center = document.getElementById("center");
-var gameDisplay = document.getElementById("gameText");
-var gameGrid = document.getElementById("gameGrid");
-var p1WinsDisplay = document.getElementById("p1WinsDisplay");
-var p2WinsDisplay = document.getElementById("p2WinsDisplay");
-
-// event listeners
+// EVENT LISTENERS
 
 window.addEventListener("DOMContentLoaded", startNewGame);
 
@@ -16,35 +15,53 @@ gameGrid.addEventListener("click", function(event) {
   takeTurn(event);
 });
 
-// handler functions
+// HANDLER FUNCTIONS
 
 function startNewGame() {
-  var p1 = new Player("p1", "🤖");
-  var p2 = new Player("p2", '👾');
   game = new Game();
-  game.player1 = p1;
-  game.player2 = p2;
-  game.currentPlayer = game.player1;
   updateWinDisplay();
 }
 
 function takeTurn(e) {
-  if (e.target.classList.contains("box")) {
-    var clickedBox = e.target;
-  }
-  if (clickedBox.innerText === "" && game.isActive) {
+  var clickedBox = e.target;
+  if (clickedBox.classList.contains("box") && clickedBox.innerText === "" && game.isActive) {
     addPlayerToken(clickedBox);
     updateBoardData(clickedBox);
-    evaluateGrid();
+    game.checkForWinner();
+    game.checkForDraw();
+    game.updateCurrentPlayer();
+    updateTextDisplay();
   }
 }
 
-// update date model & DOM
+// DOM HELPER FUNCTIONS
 
 function addPlayerToken(box) {
   box.innerText = game.currentPlayer.token;
-  // box.classList.toggle("color-fill");
+  box.classList.add("occupied");
 }
+
+function updateTextDisplay() {
+  if (game.isActive && game.currentPlayer === game.player1) {
+    gameDisplay.innerText = `it's ${game.currentPlayer.token} time`;
+  } else if (game.isActive && game.currentPlayer === game.player2) {
+    gameDisplay.innerText = `get 'em, ${game.currentPlayer.token}`;
+  } else if (!game.isActive && !game.isDraw) {
+    gameDisplay.innerText = `${game.currentPlayer.token} wins!`;
+    game.clearBoard();
+  } else {
+    gameDisplay.innerText = `it's a draw 💀`;
+    game.clearBoard();
+  }
+}
+
+function updateWinDisplay() {
+  retrieveWins();
+  p1WinsDisplay.innerText = `${game.player1.wins} wins`;
+  p2WinsDisplay.innerText = `${game.player2.wins} wins`;
+}
+
+// DATA MODEL HELPER FUNCTIONS
 
 function updateBoardData(box) {
   var parsedId = parseInt(box.id);
@@ -55,41 +72,9 @@ function updateBoardData(box) {
   }
 }
 
-// test win/draw scenarios
-
-function evaluateGrid() {
-  game.checkForWinner();
-  game.checkForDraw();
-  game.updateCurrentPlayer();
-  updateTextDisplay();
-}
-
-function updateTextDisplay() {
-  if (game.isActive) {
-    gameDisplay.innerText = `it's ${game.currentPlayer.token}'s turn`;
-  } else if (!game.isActive && !game.isDraw) {
-    gameDisplay.innerText = `${game.currentPlayer.token} wins!`;
-    clearBoard();
-  } else {
-    gameDisplay.innerText = "it's a draw 💀";
-    clearBoard();
-  }
-}
-
-// update localStorage and DOM display
-
-function updateWinDisplay() {
-  retrieveWins();
-  p1WinsDisplay.innerText = `${game.player1.wins} wins`;
-  p2WinsDisplay.innerText = `${game.player2.wins} wins`;
-}
+// LOCALSTORAGE HELPER FUNCTIONS
 
 function retrieveWins() {
   game.player1.retrieveWinsFromStorage();
   game.player2.retrieveWinsFromStorage();
 }
-
-function clearBoard() {
-    setTimeout(function() {
-      location.reload(); }, 1000);
-  }
