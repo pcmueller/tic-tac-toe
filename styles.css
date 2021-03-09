@@ -1,60 +1,56 @@
-/*** full page ***/
+/*** GENERAL STYLES ***/
 
 body {
   margin: 0;
-  font-family: 'DotGothic16', sans-serif;
-  background-color: rgb(20, 27, 67);
+  font-family: "DotGothic16", sans-serif;
+  background-color: #242c44;
 }
 
 .wrapper {
-  height: 100%;
-  background: #ccc;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .columns {
   display: flex;
-  height: 100%;
   flex: 1;
-  color: #000;
+  height: 100%;
 }
 
-/*** columns ***/
+/*** COLUMNS ***/
 
-.center {
+aside {
+  text-align: center;
+  width: 23%;
+  color: #FF1493;
+  background-image: linear-gradient(#090943, #2323ac, #5b5b8e);
+}
+
+.left-column {
+  order: 1;
+}
+
+.right-column {
+  order: 3;
+}
+
+.center-column {
   display: flex;
+  order: 2;
   flex-direction: column;
   align-items: center;
   width: 54%;
-  font-size: 1em;
   height: 100vh;
-  order: 2;
+  font-size: 1em;
   color: #00ff00;
+  background-image: linear-gradient(#1c2337, #745399, #008B8B);
   border-left: 5px solid rgba(0, 255, 0, 0.9);
   border-right: 5px solid rgba(0, 255, 0, 0.9);
-  background-image: linear-gradient(#242c44, #745399, #008B8B);
   box-shadow: 0 2px 0 2px rgba(0, 150, 0, 0.2);
 }
 
-.left-side {
-  text-align: center;
-  width: 23%;
-  order: 1;
-  color: #FF1493;
-  background-image: linear-gradient(#0e0e61, #191970, #30306c);
-}
-
-.right-side {
-  text-align: center;
-  width: 23%;
-  order: 3;
-  color: #FF1493;
-  background-image: linear-gradient(#0e0e61, #191970, #30306c);
-
-}
-
-/*** game board ***/
+/*** GAME BOARD ***/
 
 .game-text {
   margin-top: 5%;
@@ -62,25 +58,30 @@ body {
 }
 
 .game-grid {
-  margin: 11% auto 1% auto;
-  padding: 0;
-  height: 60%;
-  width: 60%;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   place-self: center;
-  /* gap: 0; */
+  width: 60%;
+  height: 60%;
+  margin: 11% auto 1% auto;
+  padding: 0;
 }
 
-/** game boxes **/
+/** GAME BOXES **/
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5vw;
   margin: 3px;
+  font-size: 5vw;
   color: #1F1F3D;
+  border: 2px rgba(0, 255, 255, 0.9) solid;
+}
+
+.box:hover:not(.occupied) {
+  cursor: pointer;
+  background-color: #ce3bb6;
   border: 2px rgba(0, 255, 255, 0.9) solid;
 }
 
@@ -100,11 +101,9 @@ body {
   border-left: 0;
 }
 
-/* .color-fill {
-  background-color: #FF7F50;
-} */
 
-/** aside columns **/
+
+/** SIDE COLUMN ELEMENTS **/
 
 .win-box {
   margin-top: 7%;
@@ -117,13 +116,3 @@ body {
 .win-counter {
   font-size: 3vw;
 }
-
-
-/** colors **/
-
-/*
-lime: #00FF00
-cyan: #00FFFF
-bright pink: #FF1493;
-khaki: #F0E68C;
-*/

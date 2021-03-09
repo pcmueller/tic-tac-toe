@@ -164,7 +164,7 @@ Final Review:
 - Walk through rubric and look for any oversights in review
 
 BONUS:
-- Add drop-down token selector button
+- Add localStorage clear button
 
 ###### Additional Docs
 - Write out README.md text

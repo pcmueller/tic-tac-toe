@@ -11,8 +11,8 @@
   <body>
     <div class="wrapper">
       <section class="columns">
-        <main class="center" id="center">
-          <header class="game-text" id="gameText">it's 🤖's turn</header>
+        <main class="center-column">
+          <header class="game-text" id="gameText">it's 👾 time</header>
           <section class="game-grid" id="gameGrid">
             <div class="box" id="0"></div>
             <div class="box" id="1"></div>
@@ -25,16 +25,16 @@
             <div class="box" id="8"></div>
           </section>
         </main>
-        <aside class="left-side">
-          <section class="win-box">
-            <header class="token">🤖</header>
-            <div class="win-counter" id="p1WinsDisplay">p1 wins</div>
-          </section>
-        </aside>
-        <aside class="right-side">
+        <aside class="left-column">
           <section class="win-box">
             <header class="token">👾</header>
-            <div class="win-counter" id="p2WinsDisplay">p2 wins</div>
+            <div class="win-counter" id="p1Wins"></div>
+          </section>
+        </aside>
+        <aside class="right-column">
+          <section class="win-box">
+            <header class="token">🤖</header>
+            <div class="win-counter" id="p2Wins"></div>
           </section>
         </aside>
       </section>
