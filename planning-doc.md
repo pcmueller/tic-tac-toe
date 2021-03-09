@@ -148,7 +148,7 @@
 JS:
 - Refactor evaluateGrid's helper functions so that turnCounter decrement in declareWinner is no longer necessary
 - Use SRP to compartmentalize updateCurrentPlayer functionality (add helper function to increment turnCounter)
-- Simplify checkForWinner - DRY out conditionals using second array or function
+- Simplify checkForWinner - DRY out conditionals
 - Fix border clicking issue - only execute function if classList includes "box"
 
 CSS:
@@ -162,6 +162,9 @@ Style & Accessibility:
 
 Final Review:
 - Walk through rubric and look for any oversights in review
+
+BONUS:
+- Add drop-down token selector button
 
 ###### Additional Docs
 - Write out README.md text

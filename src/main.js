@@ -29,7 +29,9 @@ function startNewGame() {
 }
 
 function takeTurn(e) {
-  var clickedBox = e.target;
+  if (e.target.classList.contains("box")) {
+    var clickedBox = e.target;
+  }
   if (clickedBox.innerText === "" && game.isActive) {
     addPlayerToken(clickedBox);
     updateBoardData(clickedBox);
@@ -41,6 +43,7 @@ function takeTurn(e) {
 
 function addPlayerToken(box) {
   box.innerText = game.currentPlayer.token;
+  // box.classList.toggle("color-fill");
 }
 
 function updateBoardData(box) {
