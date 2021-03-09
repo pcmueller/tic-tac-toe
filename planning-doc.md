@@ -205,7 +205,6 @@ BONUS:
 - Clean/refactor HTML using Style Guide
 - Clean/refactor CSS using Style Guide
 - Clean/refactor JS using Style Guide
-- Reach out for code reviews, if permitted
 
 ###### Day 7 - Tues 3.9
 - Run accessibility tests
