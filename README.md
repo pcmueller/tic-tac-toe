@@ -32,22 +32,19 @@ This project is an important step in demonstrating you are ready to start Module
 ## Functionality
 
 #### Click Unoccupied Grid Boxes
-- Using this interactive, 2-player web application, a user can play endless rounds of tic tac toe!  By clicking individual boxes within a responsive grid, a player can to place their assigned "token."  Once a grid box is occupied by a token, that space can no longer be clicked.  As a fun way to emphasize which spaces are availabe, the cursor icon and background color  will change when the user hovers over unoccupied boxes!
+- Using this interactive, 2-player web application, a user can play endless rounds of Tic Tac Toe!  By clicking individual boxes within a responsive grid, a player can to place their assigned "token" - either "space monster" or "robot" - in that space. Once occupied by a token, that space becomes inaccessible in future turns.  As a fun way to emphasize which spaces are availabe, the cursor icon and background color change when the user hovers over unoccupied boxes!
 
 #### Automatically Alternate Player Turns
-- 
+- Every time a space is successfully clicked, the turn alternates to the next player, making their token immediately available for play.  
 
-#### Store Game Board Info in Data Model
-- A user can search through all of their saved cards using the search bar. Their idea cards will filter as the user types their query, showing only the cards that include their search characters.
-
-#### Reflect Data Model Changes in the DOM
-- 
+#### Reflect Data Model Changes in the DOM and Data Model
+- These changes are immediately reflected on the user's screen, and subsequently stored in a Data Model for reference throughout the active game.  
 
 #### Check For Win/Draw Scenarios
-- 
+- Immediately after the user clicks an available box, the program will check to see if a "win" or "draw" scenario has been achieved, and if so, the game will automatically restart.
 
 #### Persist "Win Count" in Local Storage
-- 
+- While a new game will start anytime the players finish a game or refresh the page, a log of player wins will persist regardless!  
 
 #### Web Accessibility
 - Our application has fully implemented HTML that is accessible for individuals with visual disabilities. Our application passes the WAVE audit tool.
