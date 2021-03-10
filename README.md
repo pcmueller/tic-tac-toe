@@ -32,7 +32,7 @@ This project is an important step in demonstrating you are ready to start Module
 ## Functionality
 
 #### Click Unoccupied Grid Boxes
-- Using this interactive, 2-player web application, a user can play endless rounds of Tic Tac Toe!  By clicking individual boxes within a responsive grid, a player can to place their assigned "token" - either "space monster" or "robot" - in that space. Once occupied by a token, that space becomes inaccessible in future turns.  As a fun way to emphasize which spaces are availabe, the cursor icon and background color change when the user hovers over unoccupied boxes!
+- Using this interactive, 2-player web application, a user can play endless rounds of Tic Tac Toe!  By clicking individual boxes within a responsive grid, a player can to place their assigned "token" - either "space monster" or "robot" - in that space. Once occupied by a token, that space becomes inaccessible in future turns.  As a fun way to emphasize which spaces are available, the cursor icon and background color change when the user hovers over unoccupied boxes!
 
 #### Automatically Alternate Player Turns
 - Every time a space is successfully clicked, the turn alternates to the next player, making their token immediately available for play.  
@@ -44,10 +44,10 @@ This project is an important step in demonstrating you are ready to start Module
 - Immediately after the user clicks an available box, the program will check to see if a "win" or "draw" scenario has been achieved, and if so, the game will automatically restart.
 
 #### Persist "Win Count" in Local Storage
-- While a new game will start anytime the players finish a game or refresh the page, a log of player wins will persist regardless!  
+- While a new game will start anytime the user finishes a game or refreshes the page, a log of player wins will persist regardless!  
 
 #### Web Accessibility
-- Our application has fully implemented HTML that is accessible for individuals with visual disabilities. Our application passes the WAVE audit tool.
+- The application has fully implemented HTML that is accessible for individuals with visual disabilities, and passes the WAVE audit tool.
 
 #### Technologies Used
 - JavaScript
@@ -60,7 +60,7 @@ This project is an important step in demonstrating you are ready to start Module
 - SMACCS
 
 #### Credits
-##### Co-Contributors
+##### Project Developer
 - [🦥 Peter Muellerleile](https://github.com/pcmueller)
 
 ##### Project Manager
