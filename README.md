@@ -1,8 +1,8 @@
 # Tic Tac Toe!
 
 #### Project Links
-- [GitHub Page]()
-- [GitHub Repo]()
+- [GitHub Page](https://pcmueller.github.io/tic-tac-toe/)
+- [GitHub Repo](https://github.com/pcmueller/tic-tac-toe)
 
 ### Specification
 Now that you’ve got the main foundations down to build out a frontend application, it’s time to prove to yourself that you own those skills! You’re going to be building a Tic Tac Toe game from scratch!
